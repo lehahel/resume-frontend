@@ -1,0 +1,110 @@
+.nav {
+  background-color: rgb(252, 248, 248);
+  color: var(--header-text);
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(231, 231, 231);
+  z-index: 1;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: var(--black);
+  font-size: 24px;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+}
+
+.nav-list__link {
+  color: var(--header-text);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-list__link:hover {
+  border-radius: 10px;
+  opacity: 1;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list__link--active {
+  position: relative;
+}
+
+.nav-list__link--active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: block;
+  margin-top: 5px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.user-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative; /* Для позиционирования выпадающего списка */
+}
+
+.dropdown-list {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000; /* Чтобы выпадающий список был на переднем плане */
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* Цвет при наведении */
+}
+.nav-list__item--user {
+  position: relative;
+}
+
+/* Кнопка имени пользователя */
+.nav-list__link--button {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.nav-list__link--button:hover {
+  color: var(--accent); /* hover-цвет */
+}

@@ -1,0 +1,128 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,700;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prosto+One&display=swap");
+
+/* font-family: "Instrument Sans", sans-serif;
+font-family: "IM Fell English", serif;
+font-family: "Prosto One", sans-serif; */
+
+:root {
+  --black: #000000;
+  --red: #ff0000;
+  --white: #ffffff;
+  --darkslatergrey: #333333;
+  --lightgrey: #f3f4f6;
+
+  --iform-block: var(--lightgrey);
+  --accent: var(--red);
+  --light-bg: var(--white);
+  --header-text: var(--black);
+  --secondary-text: var(--grey);
+  --text: var(--darkslatergrey);
+  --box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+}
+html,
+body {
+  font-family: "Prosto One", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Make footer stick to bottom */
+  justify-content: space-between;
+}
+
+main {
+  flex-grow: 1;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1290px;
+}
+
+/* Кнопка */
+.btn {
+  display: inline-block;
+  background-color: var(--red);
+  padding: 12px 28px;
+  border-radius: 20px;
+  color: var(--white);
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--red);
+  box-shadow: 0 5px 10px gray, -5px -10px 20px pink;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+/* Заголовки */
+h1,
+h2 {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 13px;
+}
+
+/* Стиль для радиокнопок */
+.radio-group {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.radio-btn {
+  display: inline-block;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+
+.radio-btn input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio-btn span {
+  padding: 4px 8px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 0.75rem;
+}
+
+.radio-btn input[type="radio"]:checked + span {
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.radio-btn:hover span {
+  border-color: #666;
+}

@@ -1,0 +1,74 @@
+.profile-container {
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  background-color: #ffffff;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.resume-info {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.resume-list {
+  flex: 1; /* Это позволит списку занимать оставшееся место */
+  overflow-y: auto; /* Позволяем вертикальную прокрутку */
+  max-height: 70vh; /* Максимальная высота, если нужно */
+}
+
+.resume-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.resume-employment,
+.resume-workdays {
+  color: #555;
+}
+
+.resume-position {
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+.resume-title {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.resume-actions {
+  margin-top: 15px;
+}
+
+.resume-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  background-color: var(--accent);
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.resume-btn:hover {
+  background-color: var(--red);
+  box-shadow: 0 5px 10px gray, -5px -10px 20px pink;
+}

@@ -1,0 +1,84 @@
+.theme-selection__grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 2000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 20px 20px;
+  gap: 15px;
+  margin: 20px;
+}
+
+.theme-selection__title {
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 40px;
+}
+
+.alice-carousel {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+/* Кнопки-стрелки для карусели */
+.arrow {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.arrow--prev {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.arrow--next {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.create-resume-button {
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: var(--red);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-resume-button:hover {
+  background-color: var(--red);
+  box-shadow: 0 5px 10px gray, -5px -10px 20px pink;
+}
+
+@media (max-width: 768px) {
+  .theme-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .theme-header {
+    font-size: 28px;
+  }
+
+  .create-resume-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}

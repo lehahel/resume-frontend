@@ -1,0 +1,55 @@
+/*Шаги*/
+.section {
+  position: relative;
+  z-index: 1;
+  margin-top: -70px;
+  padding: 40px 0;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 30px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.step {
+  flex: 1 1 400px;
+  max-width: 400px;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.step img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  font-size: 20px;
+  margin: 15px 0 10px;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--darkslatergrey);
+}
+
+.step-label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}

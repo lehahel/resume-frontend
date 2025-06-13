@@ -1,0 +1,37 @@
+# node_modules - зависимости
+node_modules/
+
+# Логи
+npm-debug.log*
+yarn-error.log*
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Конфиденциальные файлы
+.env
+
+# IDE и редакторы
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Сборки
+build/
+dist/
+
+# Файлы для тестирования
+coverage/
+*.test.js
+*.spec.js
+
+# Кэш и временные файлы
+.cache/
+
+# Папка с зависимостями для Storybook
+storybook-static/
+node_modules
+node_modules
+node_modules
