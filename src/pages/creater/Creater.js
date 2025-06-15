@@ -181,6 +181,8 @@ const Creater = () => {
       birthDateIso = isNaN(bd.getTime()) ? null : bd.toISOString().split('T')[0];
     }
 
+    console.log("workExperiences", resumeData.workExperiences);
+
     const mappedWorkExperiences = resumeData.workExperiences.length
       ? resumeData.workExperiences
           .map((we) => ({
@@ -190,13 +192,6 @@ const Creater = () => {
             endDate: we.endDate || null,
             responsibilities: we.responsibilities || "",
           }))
-          .filter(
-            (we) =>
-              we.organization.trim() !== "" &&
-              we.workExpPosition.trim() !== "" &&
-              we.startDate !== null &&
-              we.responsibilities.trim() !== ""
-          )
       : [];
 
     const mappedEducations = resumeData.educations.length
@@ -235,6 +230,8 @@ const Creater = () => {
         ? resumeData.id
         : resumeToEdit?.id ?? resumeToEdit?.Id ?? null;
 
+    console.log("Mapped work experiences:", mappedWorkExperiences);
+
     return {
       id: id,
       title: title,
@@ -267,10 +264,6 @@ const Creater = () => {
       driverLicenses: driverLicenses.join(""),
       hasMedicalBook: !!resumeData.hasMedicalBook,
       photo: resumeData.photo || null,
-      // photo:
-      //   resumeData.photo && !resumeData.photo.startsWith("data:")
-      //     ? resumeData.photo
-      //     : null,
       theme: selectedTheme,
       languages: resumeData.languages || "",
       personalQualities: resumeData.personalQualities || "",
@@ -460,6 +453,7 @@ const Creater = () => {
             jsonData[key] = payload[key];
           }
         }
+        console.log("jsonData", jsonData);
         await updateResume(payload.id, jsonData);
         navigate("/authh");
       } catch (err) {
@@ -856,7 +850,7 @@ const Creater = () => {
                         newWorkExperiences[0] = {
                           ...newWorkExperiences[0],
                           endDate: e.target.checked
-                            ? null
+                            ? new Date().toISOString()
                             : newWorkExperiences[0].endDate,
                         };
                         setResumeData((prev) => ({
