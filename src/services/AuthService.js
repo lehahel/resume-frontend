@@ -2,18 +2,32 @@ import { apiAuth } from "../api/axios";
 
 
 export const loginRequest = async ({ login, password }) => {
-  const res = await apiAuth.post("login", { Login: login, Password: password });
-  return res.data.user;
+  try {
+    const res = await apiAuth.post("login", { Login: login, Password: password });
+    return res.data.user;
+  } catch (error) {
+    if (error.response?.status === 401) {
+      alert("Неверный логин или пароль");
+    }
+    throw error;
+  }
 };
 
 
 export const registerRequest = async ({ name, email, password }) => {
-  const res = await apiAuth.post("register", {
-    Name: name,
-    Email: email,
-    Password: password,
-  });
-  return res.data.user;
+  try {
+    const res = await apiAuth.post("register", {
+      Name: name,
+      Email: email,
+      Password: password,
+    });
+    return res.data.user;
+  } catch (error) {
+    if (error.response?.status === 401) {
+      alert("Ошибка регистрации. Пользователь уже существует");
+    }
+    throw error;
+  }
 };
 
 
