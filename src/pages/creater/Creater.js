@@ -171,8 +171,8 @@ const Creater = () => {
 
   const collectResumeData = () => {
     let canRelocateBool = null;
-    if (resumeData.canRelocate === "Возможен") canRelocateBool = true;
-    else if (resumeData.canRelocate === "Невозможен") canRelocateBool = false;
+    if (resumeData.canRelocate === "Возможен") canRelocateBool = "true";
+    else if (resumeData.canRelocate === "Невозможен") canRelocateBool = "false";
 
     let birthDateIso = null;
     if (resumeData.birthDate) {
@@ -442,29 +442,33 @@ const Creater = () => {
     console.log("Submitting update with payload:", payload);
 
     const errors = [];
+    // Required fields (nullable=False)
     if (!payload.lastName || payload.lastName.trim() === "") {
       errors.push("Фамилия обязательна");
     }
     if (!payload.firstName || payload.firstName.trim() === "") {
       errors.push("Имя обязательно");
     }
+    if (!payload.birthDate) {
+      errors.push("Дата рождения обязательна");
+    }
+    if (!payload.email || payload.email.trim() === "") {
+      errors.push("Email обязателен");
+    }
     if (!payload.position || payload.position.trim() === "") {
       errors.push("Должность обязательна");
+    }
+    if (!payload.employment || payload.employment.trim() === "") {
+      errors.push("Занятость обязательна");
+    }
+    if (!payload.workSchedule || payload.workSchedule.trim() === "") {
+      errors.push("График работы обязателен");
     }
     if (!payload.city || payload.city.trim() === "") {
       errors.push("Город обязателен");
     }
-    if (
-      payload.isReadyForTrips === undefined ||
-      payload.isReadyForTrips === null
-    ) {
-      errors.push("Укажите готовность к командировкам");
-    }
-    if (payload.canRelocate === undefined || payload.canRelocate === null) {
-      errors.push("Укажите возможность переезда");
-    }
-    if (!payload.title || payload.title.trim() === "") {
-      errors.push("Название резюме обязательно");
+    if (!payload.citizenship || payload.citizenship.trim() === "") {
+      errors.push("Гражданство обязательно");
     }
 
     if (errors.length > 0) {
