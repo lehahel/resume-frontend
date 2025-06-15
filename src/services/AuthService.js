@@ -23,8 +23,8 @@ export const registerRequest = async ({ name, email, password }) => {
     });
     return res.data.user;
   } catch (error) {
-    if (error.response?.status === 401) {
-      alert("Ошибка регистрации. Пользователь уже существует");
+    if (error.response?.status === 400) {
+      alert("Такой email уже зарегистрирован");
     }
     throw error;
   }
