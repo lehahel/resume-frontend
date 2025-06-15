@@ -37,7 +37,15 @@ export const logoutRequest = async () => {
 
 
 export const checkAuthRequest = async () => {
-  const res = await apiAuth.get("check");
-
-  return res.data.username;
+  try {
+    const res = await apiAuth.get("check");
+    return res.data;
+  } catch (error) {
+    if (error.response?.status === 401) {
+      if (window.location.pathname !== '/authh') {
+        window.location.href = '/authh';
+      }
+    }
+    throw error;
+  }
 };

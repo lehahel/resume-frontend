@@ -22,8 +22,7 @@ export const AuthProvider = ({ children }) => {
   const checkAuth = useCallback(async () => {
     try {
       const userData = await checkAuthRequest();
-     
-      setUser(userData);
+      setUser(userData.user || userData);
       setIsAuth(true);
     } catch {
       setUser(null);
