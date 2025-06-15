@@ -294,31 +294,6 @@ const Creater = () => {
 
     if (user?.id) {
       try {
-        // const formData = new FormData();
-
-        // for (const key in resumeDataToSave) {
-        //   if (
-        //     key !== "photo" &&
-        //     resumeDataToSave[key] !== undefined &&
-        //     resumeDataToSave[key] !== null
-        //   ) {
-        //     if (
-        //       Array.isArray(resumeDataToSave[key]) ||
-        //       (typeof resumeDataToSave[key] === "object" &&
-        //         !(resumeDataToSave[key] instanceof File))
-        //     ) {
-        //       const jsonString = JSON.stringify(resumeDataToSave[key]);
-        //       console.log(`Appending key: ${key} with JSON:`, jsonString);
-        //       formData.append(key, jsonString);
-        //     } else {
-        //       console.log(
-        //         `Appending key: ${key} with value:`,
-        //         resumeDataToSave[key]
-        //       );
-        //       formData.append(key, resumeDataToSave[key]);
-        //     }
-        //   }
-        // }
 
         const jsonData = {};
         for (const key in resumeDataToSave) {
@@ -330,10 +305,6 @@ const Creater = () => {
             jsonData[key] = resumeDataToSave[key];
           }
         }
-
-        // if (photoFile && photoFile instanceof File) {
-        //   formData.append("PhotoFile", photoFile);
-        // }
 
         const savedResume = await createResumeData(jsonData);
         console.log("Резюме успешно сохранено!", savedResume);
