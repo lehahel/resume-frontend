@@ -10,6 +10,7 @@ import type3 from "./../../img/shab/3.png";
 import type4 from "./../../img/shab/4.png";
 import type5 from "./../../img/shab/5.png";
 import { useAuth } from "./../../context/AuthContext";
+import { v4 as uuidv4 } from 'uuid';
 
 const Creater = () => {
   const { user } = useAuth();
@@ -22,7 +23,7 @@ const Creater = () => {
 
   const [step, setStep] = useState("form");
   const [resumeData, setResumeData] = useState({
-    id: null,
+    id: isEditing ? (resumeToEdit?.id ?? resumeToEdit?.Id ?? null) : uuidv4(),
     firstName: "",
     lastName: "",
     middleName: "",
